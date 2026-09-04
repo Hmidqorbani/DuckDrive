@@ -1,0 +1,14 @@
+mashti.just-money.co.uk:8880:eeNEgYdJvXrFGRMCIMJdCQ
+you.foltmeingop.co.uk:8880:eeNEgYdJvXrFGRMCIMJdCQ
+mashti.just-money.co.uk:8880:eeNEgYdJvXrFGRMCIMJdCQ
+you.foltmeingop.co.uk:8880:eeNEgYdJvXrFGRMCIMJdCQ
+94.184.39.5:2020:00000000000000000000000000000000
+resturant.zereshkpolo.info:7799:dd10400103324995b07c030386e886e7f1
+bad.nisti.co.uk:8880:104462821249bd7ac519130220c25d09
+love.roseprox.xyz:5443:ee74e3501358c742b6ec0d4e5d8ffa2bf47777772e636c6f7564666c6172652e636f6d
+
+
+tg://proxy?server=94.184.39.5&port=2020&secret=00000000000000000000000000000000
+tg://proxy?server=resturant.zereshkpolo.info&port=7799&secret=dd10400103324995b07c030386e886e7f1
+https://t.me/proxy?server=bad.nisti.co.uk&port=8880&secret=104462821249bd7ac519130220c25d09
+https://t.me/proxy?server=love.roseprox.xyz&port=5443&secret=ee74e3501358c742b6ec0d4e5d8ffa2bf47777772e636c6f7564666c6172652e636f6d
