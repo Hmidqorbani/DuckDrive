@@ -85,6 +85,61 @@ pip install -r requirements.txt
 ```
 
 > **نکته:** اگر از پروکسی EE (FakeTLS) استفاده می‌کنید، بسته‌ی اضافه را نصب کنید:
+## ساخت فایل اجرایی (.exe)
+
+### پیش‌نیازها
+- **Python 3.9+** (همان‌طور که در بخش پیش‌نیازها ذکر شده)
+- **PyInstaller**
+- **Inno Setup** برای ساخت بسته‌ی نصب ویندوزی (اختیاری)
+
+### ایجاد فایل exe با PyInstaller
+```bash
+pip install pyinstaller
+pyinstaller --noconfirm --onefile --windowed --name CyDrive --icon=icon.ico --add-data "icon.ico;." gui.py
+```
+> **توضیح پارامترها:**
+> - `--onefile` : همه‌ی وابستگی‌ها در یک فایل اجرایی می‌شود.
+> - `--windowed` : برنامه بدون کنسول اجرا می‌شود (برای برنامه‌های گرافیکی).
+> - `--icon=icon.ico` : آیکون برنامه.
+> - `--add-data "icon.ico;."` : فایل آیکون را به باینری اضافه می‌کند.
+> - `gui.py` : نقطهٔ ورود برنامه (در این پروژه `gui.py` یا همان `app.py` بسته به نحوهٔ راه‌اندازی کاربرد دارد؛ اگر از `app.py` استفاده می‌کنید، نام فایل را تغییر دهید.)
+
+پس از اتمام، فایل اجرایی در پوشهٔ `dist` ساخته می‌شود (`dist\CyDrive.exe`).
+
+### ساخت نصب‌کننده با Inno Setup (اختیاری)
+1. **دانلود و نصب Inno Setup** از <https://jrsoftware.org/isinfo.php>.
+2. یک فایل اسکریپت جدید (`CyDriveInstaller.iss`) بسازید و محتویات زیر را در آن قرار دهید:
+```iss
+[Setup]
+AppName=CyDrive
+AppVersion=2.2
+DefaultDirName={autopf}\CyDrive
+DefaultGroupName=CyDrive
+OutputBaseFilename=CyDrive-Setup
+Compression=lzma
+SolidBreak=yes
+ArchitecturesAllowed=x64
+ArchitecturesInstallIn64BitMode=x64
+
+[Files]
+Source: "dist\CyDrive.exe"; DestDir: "{app}"; Flags: ignoreversion
+Source: "icon.ico"; DestDir: "{app}"; Flags: ignoreversion
+
+[Icons]
+Name: "{autoprograms}\CyDrive"; Filename: "{app}\CyDrive.exe"
+
+[Run]
+Filename: "{app}\CyDrive.exe"; Description: "Run CyDrive"; Flags: nowait postinstall skipifsilent
+```
+3. اسکریپت را در Inno Setup Compiler باز کنید و روی **Compile** کلیک کنید. پس از پایان، یک فایل نصب `CyDrive-Setup.exe` در پوشهٔ `Output` تولید می‌شود.
+
+### نکات مهم
+- قبل از ساخت نصب‌کننده، مطمئن شوید فایل `CyDrive.exe` با موفقیت در `dist` ساخته شده است.
+- اگر برنامه به فایل‌های پیکربندی (`config.json`, `proxies.txt` و ...) نیاز دارد، می‌توانید آنها را به‌صورت پیش‌فرض در مسیر نصب (مثلاً `{app}\`) کپی کنید یا کاربر را به ایجاد آنها راهنمایی کنید.
+- برای به‌روزرسانی نسخه، فقط مقدار `AppVersion` را در بخش `[Setup]` تغییر دهید.
+
+---
+
 > ```bash
 > pip install TelethonFakeTLS
 > ```
