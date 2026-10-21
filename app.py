@@ -1,8 +1,8 @@
 #!/usr/bin/env python3
 # -*- coding: utf-8 -*-
 """
-CyDrive Standalone - All-in-One Cloud Virtual Drive via Telegram
-Developed by Cynet Security Team
+Duck Drive Standalone - All-in-One Cloud Virtual Drive via Telegram
+Developed by Hmidqorbani
 Version 2.2 (Standalone) - Smart MTProto Proxy + FakeTLS + Health-Check
 """
 
@@ -132,7 +132,7 @@ INDEX_HTML = """<!DOCTYPE html>
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>CyDrive • Infinite Cloud Virtual Drive</title>
+    <title>Duck Drive • Infinite Cloud Virtual Drive</title>
     <link rel="icon" type="image/jpeg" href="/static/img/logo.jpg">
     <link rel="stylesheet" href="/static/css/style.css">
     <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;600;700;800&family=JetBrains+Mono:wght@400;600&display=swap" rel="stylesheet">
@@ -1960,7 +1960,7 @@ class TelegramSyncEngine:
         if text in ("/start", "/help", "/menu"):
             kb = self._menu_keyboard()
             msg = (
-                "🚀 **CyDrive Menu**\n\n"
+                "🚀 **Duck Drive Menu**\n\n"
                 "Use the buttons below, or commands:\n\n"
                 "📁 /list — recent files\n"
                 "🔍 /search `<name>` — search\n"
@@ -2759,7 +2759,7 @@ class CyWebDAVServer:
                 with open(tpl, "w", encoding="utf-8") as f:
                     f.write(
                         "<!DOCTYPE html><html><body>"
-                        "<h3>CyDrive WebDAV</h3>"
+                        "<h3>Duck Drive WebDAV</h3>"
                         "<p>Use the Web UI instead.</p>"
                         "</body></html>"
                     )
@@ -3000,12 +3000,9 @@ class CyDriveCLI:
 
     def print_banner(self):
         banner = """
-   ______      ____       _
-  / ____/_  __/ __ \\_____(_)   _____
- / /   / / / / / / / ___/ / | / / _ \\
-/ /___/ /_/ / /_/ / /  / /| |/ /  __/
-\\____/\\__, /_____/_/  /_/ |___/\\___/
-     /____/  HMID QORBANI
+
+        HMID QORBANI
+
         """
         if HAS_RICH:
             self.console.print(

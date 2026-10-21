@@ -1,7 +1,6 @@
 # DuckDrive (Hmid qorbani) — درایو ابری همه‌کاره با تلگرام
 
 **نسخه:** 2.2 (Standalone)
-**نویسنده:** Hmid qorbani
 
 ---
 
@@ -104,37 +103,37 @@ pyinstaller --noconfirm --onefile --windowed --name CyDrive --icon=icon.ico --ad
 > - `--add-data "icon.ico;."` : فایل آیکون را به باینری اضافه می‌کند.
 > - `gui.py` : نقطهٔ ورود برنامه (در این پروژه `gui.py` یا همان `app.py` بسته به نحوهٔ راه‌اندازی کاربرد دارد؛ اگر از `app.py` استفاده می‌کنید، نام فایل را تغییر دهید.)
 
-پس از اتمام، فایل اجرایی در پوشهٔ `dist` ساخته می‌شود (`dist\CyDrive.exe`).
+پس از اتمام، فایل اجرایی در پوشهٔ `dist` ساخته می‌شود (`dist\DuckDrive.exe`).
 
 ### ساخت نصب‌کننده با Inno Setup (اختیاری)
 1. **دانلود و نصب Inno Setup** از <https://jrsoftware.org/isinfo.php>.
-2. یک فایل اسکریپت جدید (`CyDriveInstaller.iss`) بسازید و محتویات زیر را در آن قرار دهید:
+2. یک فایل اسکریپت جدید (`DuckDrive.iss`) بسازید و محتویات زیر را در آن قرار دهید:
 ```iss
 [Setup]
-AppName=CyDrive
+AppName=DuckDrive
 AppVersion=2.2
-DefaultDirName={autopf}\CyDrive
-DefaultGroupName=CyDrive
-OutputBaseFilename=CyDrive-Setup
+DefaultDirName={autopf}\DuckDrive
+DefaultGroupName=DuckDrive
+OutputBaseFilename=DuckDrive-Setup
 Compression=lzma
 SolidBreak=yes
 ArchitecturesAllowed=x64
 ArchitecturesInstallIn64BitMode=x64
 
 [Files]
-Source: "dist\CyDrive.exe"; DestDir: "{app}"; Flags: ignoreversion
+Source: "dist\DuckDrive.exe"; DestDir: "{app}"; Flags: ignoreversion
 Source: "icon.ico"; DestDir: "{app}"; Flags: ignoreversion
 
 [Icons]
-Name: "{autoprograms}\CyDrive"; Filename: "{app}\CyDrive.exe"
+Name: "{autoprograms}\DuckDrive"; Filename: "{app}\DuckDrive.exe"
 
 [Run]
-Filename: "{app}\CyDrive.exe"; Description: "Run CyDrive"; Flags: nowait postinstall skipifsilent
+Filename: "{app}\DuckDrive.exe"; Description: "Run DuckDrive"; Flags: nowait postinstall skipifsilent
 ```
 3. اسکریپت را در Inno Setup Compiler باز کنید و روی **Compile** کلیک کنید. پس از پایان، یک فایل نصب `CyDrive-Setup.exe` در پوشهٔ `Output` تولید می‌شود.
 
 ### نکات مهم
-- قبل از ساخت نصب‌کننده، مطمئن شوید فایل `CyDrive.exe` با موفقیت در `dist` ساخته شده است.
+- قبل از ساخت نصب‌کننده، مطمئن شوید فایل `DuckDrive.exe` با موفقیت در `dist` ساخته شده است.
 - اگر برنامه به فایل‌های پیکربندی (`config.json`, `proxies.txt` و ...) نیاز دارد، می‌توانید آنها را به‌صورت پیش‌فرض در مسیر نصب (مثلاً `{app}\`) کپی کنید یا کاربر را به ایجاد آنها راهنمایی کنید.
 - برای به‌روزرسانی نسخه، فقط مقدار `AppVersion` را در بخش `[Setup]` تغییر دهید.
 
@@ -269,7 +268,7 @@ net use Y: /delete
 یا از ترمینال:
 
 ```bash
-mount_webdav http://127.0.0.1:8080 ~/CyDrive
+mount_webdav http://127.0.0.1:8080 ~/DuckDrive
 ```
 
 ### لینوکس
@@ -284,8 +283,8 @@ gio mount dav://127.0.0.1:8080
 
 ```bash
 sudo apt-get install davfs2          # برای اوبونتو/دبیان
-mkdir -p ~/CyDrive
-mount -t davfs http://127.0.0.1:8080 ~/CyDrive
+mkdir -p ~/DuckDrive
+mount -t davfs http://127.0.0.1:8080 ~/DuckDrive
 ```
 
 #### گزینه ۳ – `rclone`
@@ -410,12 +409,4 @@ pip install -r requirements.txt --upgrade
 
 ---
 
-## مجوز
-
-این پروژه تحت **مجوز MIT** منتشر شده است. متن کامل مجوز در فایل `LICENSE` موجود است.
-
----
-
 *امیدواریم از استفاده‌ی DuckDrive لذت ببرید! 🎉*
-
-اگر به راهنمایی‌های بیشتری (مثلاً Dockerizing، احراز هویت سفارشی یا یکپارچه‌سازی CI) نیاز داشتید، حتماً بپرسید.
