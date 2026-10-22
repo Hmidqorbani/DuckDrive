@@ -26,6 +26,7 @@
 ## مقدمه
 
 DuckDrive 
+
  در یک چت تلگرام، فضای ذخیره‌سازی شخصی ابری برای شما فراهم می‌کند. فایل‌هایی که به ربات می‌فرستید، در سرور محلی ذخیره، در صورت نیاز تکه‌تکه (Chunk) می‌شوند و در یک دیتابیس SQLite مانیتور می‌شوند.
 
 دسترسی به این درایو از طریق:
@@ -94,7 +95,7 @@ pip install -r requirements.txt
 ### ایجاد فایل exe با PyInstaller
 ```bash
 pip install pyinstaller
-pyinstaller --noconfirm --onefile --windowed --name CyDrive --icon=icon.ico --add-data "icon.ico;." gui.py
+pyinstaller --noconfirm --onefile --windowed --name DuckDrive --icon=icon.ico --add-data "icon.ico;." gui.py
 ```
 > **توضیح پارامترها:**
 > - `--onefile` : همه‌ی وابستگی‌ها در یک فایل اجرایی می‌شود.
