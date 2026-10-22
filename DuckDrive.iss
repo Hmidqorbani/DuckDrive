@@ -1,6 +1,6 @@
 ; DuckDrive Installer — Inno Setup
 #define MyAppName "DuckDrive"
-#define MyAppVersion "3.1"
+#define MyAppVersion "5.1"
 #define MyAppPublisher "DuckDrive"
 #define MyAppExeName "DuckDrive.exe"
 

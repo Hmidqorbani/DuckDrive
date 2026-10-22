@@ -97,6 +97,14 @@ try:
 
     HAS_WATCHDOG = True
 except ImportError:
+    Observer = None
+
+    class FileSystemEventHandler:
+        """Fallback no-op handler when watchdog is unavailable."""
+
+        def __init__(self, *args, **kwargs):
+            pass
+
     HAS_WATCHDOG = False
 
 try:
@@ -3000,9 +3008,7 @@ class CyDriveCLI:
 
     def print_banner(self):
         banner = """
-
         HMID QORBANI
-
         """
         if HAS_RICH:
             self.console.print(
