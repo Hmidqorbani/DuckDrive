@@ -1,6 +1,22 @@
-# DuckDrive (Hmid qorbani) — درایو ابری همه‌کاره با تلگرام
 
-**نسخه:** 5.1 (Standalone)
+
+<p align="center">
+  <img src="./icon.ico" alt="Description" width="150">
+</p>
+
+<h1 align="center">🦆 Duck Drive</h1>
+
+<p align="center">
+  <strong>درایو ابری با تلگرام</strong>
+</p>
+
+<p align="center">
+  <img src="https://img.shields.io/badge/Python-3.8%2B-3776AB?style=for-the-badge&logo=python&logoColor=white" alt="Python Version">
+  <img src="https://img.shields.io/badge/License-MIT-green?style=for-the-badge" alt="License">
+  <img src="https://img.shields.io/github/stars/Hmidqorbani/DuckDrive?style=for-the-badge&color=yellow" alt="Stars">
+  <img src="https://img.shields.io/github/forks/hmidqorbani/DuckDrive?style=for-the-badge&color=orange" alt="Forks">
+</p>
+
 
 ---
 
