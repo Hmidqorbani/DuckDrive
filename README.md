@@ -17,6 +17,22 @@
   <img src="https://img.shields.io/github/forks/hmidqorbani/DuckDrive?style=for-the-badge&color=orange" alt="Forks">
 </p>
 
+---
+</br>
+</br>
+
+
+<p align="center">
+  <img src="./photo/2.jpg" alt="Description">
+</p>
+</br>
+<p align="center">
+  <img src="./photo/3.jpg" alt="Description">
+</p>
+</br>
+<p align="center">
+  <img src="./photo/1.jpg" alt="Description">
+</p>
 
 ---
 
